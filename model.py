@@ -96,7 +96,7 @@ class Dense:
             self.dataLoader.y_unlabeled = self.dataLoader.y_unlabeled[pidx]
         
         # 나머지 라벨링
-        for i in range(360):
+        for i in range(320):
             res = self.sess.run(self.y_sm, feed_dict={self.x: self.dataLoader.x_unlabeled})
             self.y_autolabeled = res.argmax(axis=1)
             pmax = np.amax(res, axis=1)
